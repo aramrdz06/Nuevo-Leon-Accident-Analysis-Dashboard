@@ -11,4 +11,4 @@ Este proyecto es un tablero interactivo desarrollado con **Streamlit** para el a
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone [PEGA_EL_NUEVO_LINK_AQUI]
+   git clone https://github.com/aramrdz06/Nuevo-Leon-Accident-Analysis-Dashboard
