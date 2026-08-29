@@ -5,20 +5,20 @@ import folium
 from streamlit_folium import st_folium
 import numpy as np
 
-# ---------------------------
+
 # CONFIGURACIÓN
-# ---------------------------
+
 st.set_page_config(page_title="Dashboard Accidentes NL", layout="wide")
 
-st.title("📊 Sistema de Monitoreo de Accidentes - Nuevo León")
+st.title(" Sistema de Monitoreo de Accidentes - Nuevo León")
 st.markdown("Análisis de Big Data para la toma de decisiones en el Sector Transporte/Gobierno.")
 
-# ---------------------------
+
 # 1. CARGA Y LIMPIEZA
-# ---------------------------
+
 @st.cache_data
 def load_data():
-    # ✅ Ruta correcta (archivo en la misma carpeta)
+    #  Ruta correcta (archivo en la misma carpeta)
     df = pd.read_csv('sct_71_accidentes_mes.csv', encoding='latin-1')
 
     df['entidad_federativa'] = df['entidad_federativa'].str.strip()
@@ -60,9 +60,9 @@ df_filtrado = df_nl[df_nl['mes'].isin(mes_seleccionado)]
 # ---------------------------
 col1, col2 = st.columns(2)
 
-# 📍 MAPA
+#  MAPA
 with col1:
-    st.subheader("📍 Visualización Geoespacial")
+    st.subheader(" Visualización Geoespacial")
 
     m = folium.Map(location=[25.6866, -100.3161], zoom_start=7)
 
@@ -79,9 +79,9 @@ with col1:
 
     st_folium(m, width=500, height=400)
 
-# 🔥 HEATMAP
+#  HEATMAP
 with col2:
-    st.subheader("🔥 Heatmap de Densidad")
+    st.subheader(" Heatmap de Densidad")
 
     if len(df_filtrado) > 0:
         fig_heat = px.density_heatmap(
@@ -95,8 +95,8 @@ with col2:
 
 st.divider()
 
-# 🫧 BUBBLE
-st.subheader("🫧 Gráfico de Burbujas")
+#  BUBBLE
+st.subheader(" Gráfico de Burbujas")
 
 if len(df_filtrado) > 0:
     fig_bubble = px.scatter(
@@ -109,15 +109,14 @@ if len(df_filtrado) > 0:
     )
     st.plotly_chart(fig_bubble, use_container_width=True)
 
-# ===========================
-# ⭐ MONITOREO EN TIEMPO REAL
-# ===========================
+
+#  MONITOREO EN TIEMPO REAL
 st.divider()
-st.subheader("⏱️ Monitoreo en Tiempo Real")
+st.subheader(" Monitoreo en Tiempo Real")
 
 valor = np.random.randint(50, 200)
 
-st.metric("🚗 Accidentes registrados ahora", valor)
+st.metric("Accidentes registrados ahora", valor)
 
 datos_rt = pd.DataFrame({
     "tiempo": range(20),
@@ -127,4 +126,4 @@ datos_rt = pd.DataFrame({
 fig_rt = px.line(datos_rt, x="tiempo", y="accidentes")
 st.plotly_chart(fig_rt, use_container_width=True)
 
-st.caption("🔄 Actualiza la página para simular nuevos datos")
+st.caption(" Actualiza la página para simular nuevos datos")
