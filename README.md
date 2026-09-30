@@ -2,8 +2,7 @@
 
 Dashboard interactivo hecho con **Python y Streamlit** para explorar datos de accidentes por entidad federativa y mes, con Nuevo León como estado predeterminado. Proyecto académico de la carrera de Ingeniería en Desarrollo de Software (Tecmilenio).
 
-<!-- Agrega aquí el link de tu app publicada, por ejemplo: **Demo:** https://tu-app.streamlit.app -->
-<!-- Agrega aquí una captura de pantalla: sube la imagen al repo y escribe ![Dashboard](captura.png) -->
+**Demo:** https://nuevo-leon-accident-analysis-dashboard-er43hbuewfsdkgpeevyspg.streamlit.app/
 
 ## Qué permite hacer
 
